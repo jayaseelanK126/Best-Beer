@@ -6,7 +6,11 @@ target 'Best Beer' do
   use_frameworks!
 
   # Pods for Best Beer
+  pod 'ReachabilitySwift'
+  pod 'RealmSwift'
+  pod 'ObjectMapper'
 
+  
   target 'Best BeerTests' do
     inherit! :search_paths
     # Pods for testing

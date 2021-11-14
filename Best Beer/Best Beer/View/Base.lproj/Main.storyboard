@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Best_Beer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7j-ag-rFm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Td-Q9-7jr">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="101.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Beer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqc-SG-WQn">
+                                                <rect key="frame" x="10" y="59" width="140.5" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4G-5e-u7B">
+                                                <rect key="frame" x="368" y="58.5" width="36" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="36" id="Uvz-EP-lFg"/>
+                                                    <constraint firstAttribute="width" secondItem="e4G-5e-u7B" secondAttribute="height" id="roQ-jW-RJ4"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="sortBy"/>
+                                                <connections>
+                                                    <action selector="sortByBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z5A-N9-667"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="wqc-SG-WQn" secondAttribute="bottom" constant="8" id="Wmu-qs-eqH"/>
+                                            <constraint firstAttribute="trailing" secondItem="e4G-5e-u7B" secondAttribute="trailing" constant="10" id="rUf-xK-xmf"/>
+                                            <constraint firstItem="wqc-SG-WQn" firstAttribute="leading" secondItem="3Td-Q9-7jr" secondAttribute="leading" constant="10" id="xaq-BH-oYz"/>
+                                            <constraint firstItem="e4G-5e-u7B" firstAttribute="centerY" secondItem="wqc-SG-WQn" secondAttribute="centerY" id="zwp-g3-xKJ"/>
+                                        </constraints>
+                                    </view>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="What you wish to drink?" translatesAutoresizingMaskIntoConstraints="NO" id="cen-8S-zMX">
+                                        <rect key="frame" x="5" y="117" width="404" height="51"/>
+                                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                    </searchBar>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tK5-ss-xCj">
+                                        <rect key="frame" x="0.0" y="182.5" width="414" height="713.5"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4g2-bV-HDg">
+                                                <rect key="frame" x="5" y="30" width="404" height="683.5"/>
+                                                <color key="backgroundColor" red="0.090196078430000007" green="0.098039215690000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="agF-G3-Kty"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="XTU-a6-lfA"/>
+                                                </connections>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.090196078431372548" green="0.098039215686274508" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="4g2-bV-HDg" firstAttribute="top" secondItem="tK5-ss-xCj" secondAttribute="top" constant="30" id="6Ov-Pt-ihQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="4g2-bV-HDg" secondAttribute="bottom" id="F1d-gB-tC5"/>
+                                            <constraint firstAttribute="trailing" secondItem="4g2-bV-HDg" secondAttribute="trailing" constant="5" id="aqt-r1-LHC"/>
+                                            <constraint firstItem="4g2-bV-HDg" firstAttribute="leading" secondItem="tK5-ss-xCj" secondAttribute="leading" constant="5" id="sdb-sV-a9o"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="3Td-Q9-7jr" secondAttribute="trailing" id="2IM-jr-vf3"/>
+                                    <constraint firstItem="cen-8S-zMX" firstAttribute="leading" secondItem="I7j-ag-rFm" secondAttribute="leading" constant="5" id="If8-V0-kII"/>
+                                    <constraint firstItem="3Td-Q9-7jr" firstAttribute="top" secondItem="I7j-ag-rFm" secondAttribute="top" id="Ofk-Hx-iPa"/>
+                                    <constraint firstItem="tK5-ss-xCj" firstAttribute="leading" secondItem="I7j-ag-rFm" secondAttribute="leading" id="PAf-z3-ePF"/>
+                                    <constraint firstItem="tK5-ss-xCj" firstAttribute="top" secondItem="cen-8S-zMX" secondAttribute="bottom" constant="15" id="VJd-eW-VSz"/>
+                                    <constraint firstItem="cen-8S-zMX" firstAttribute="top" secondItem="3Td-Q9-7jr" secondAttribute="bottom" constant="15" id="XT9-S6-8oD"/>
+                                    <constraint firstItem="3Td-Q9-7jr" firstAttribute="leading" secondItem="I7j-ag-rFm" secondAttribute="leading" id="cWH-3v-YQ1"/>
+                                    <constraint firstAttribute="trailing" secondItem="tK5-ss-xCj" secondAttribute="trailing" id="faC-YG-c6A"/>
+                                    <constraint firstAttribute="trailing" secondItem="cen-8S-zMX" secondAttribute="trailing" constant="5" id="wux-cD-cLb"/>
+                                    <constraint firstAttribute="bottom" secondItem="tK5-ss-xCj" secondAttribute="bottom" id="yPx-px-WZt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="I7j-ag-rFm" secondAttribute="bottom" id="G0h-0R-eib"/>
+                            <constraint firstItem="wqc-SG-WQn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="b1s-Qp-GNs"/>
+                            <constraint firstItem="I7j-ag-rFm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qS4-pp-bag"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I7j-ag-rFm" secondAttribute="trailing" id="rCh-wv-Uot"/>
+                            <constraint firstItem="I7j-ag-rFm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tBb-Qc-3dy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="beerListContainerView" destination="tK5-ss-xCj" id="L9F-HL-KWe"/>
+                        <outlet property="beerListTblView" destination="4g2-bV-HDg" id="DJn-ts-FOe"/>
+                        <outlet property="headerTitleLbl" destination="wqc-SG-WQn" id="NzG-Zq-Vvs"/>
+                        <outlet property="headerView" destination="3Td-Q9-7jr" id="FzQ-8P-OhM"/>
+                        <outlet property="outerView" destination="I7j-ag-rFm" id="Pem-S6-gm6"/>
+                        <outlet property="searchBar" destination="cen-8S-zMX" id="qRS-Gf-mIQ"/>
+                        <outlet property="sortyByBtn" destination="e4G-5e-u7B" id="QWw-Td-Xug"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23.188405797101453" y="65.625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sortBy" width="50" height="50"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

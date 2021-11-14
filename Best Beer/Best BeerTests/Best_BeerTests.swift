@@ -9,8 +9,14 @@ import XCTest
 @testable import Best_Beer
 
 class Best_BeerTests: XCTestCase {
+    
+    //MARK: - Variable Declarations
+    var webServiceHelper: NetworkManager!
+    var viewModelObj: BeerListModelView!
 
     override func setUpWithError() throws {
+        webServiceHelper = NetworkManager()
+        viewModelObj = BeerListModelView()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
@@ -18,16 +24,71 @@ class Best_BeerTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func test_Networkmanager_With_ValidRequest_Returns_BeerDataResponse()
+    {
+        //Arrange
+        let expectation = self.expectation(description: "ValidRequest_Returns_NewsDataResponse")
+        
+        // Act
+        NetworkManager.GETMethodRequest(foodName: "tacos") { result in
+            
+            if let safeData = result
+            {
+                let jsonObj = Parser.parseBeerList(apiResponse: safeData)
+                
+                self.viewModelObj.insertBeerData(jsonObj, foodName: "") {
+                    self.viewModelObj.fetchBeerData("") { value in
+                        //Assert
+                        XCTAssertNotNil(value)
+                        XCTAssertNotEqual(0, value.count)
+                    }
+                    
+                    //Assert
+                    XCTAssertNotNil(jsonObj)
+                }
+                
+                //Assert
+                XCTAssertNotNil(safeData)
+                
+                expectation.fulfill()
+            }
+            
+        } Failure: { error in
+            XCTAssertNil(error)
+            expectation.fulfill()
         }
+        waitForExpectations(timeout: 30, handler: nil)
     }
+    
+    func test_Networkmanager_With_InvalidRequest_Returns_BeerDataResponse()
+    {
+        //Arrange
+        let expectation = self.expectation(description: "InvalidRequest_Returns_NewsDataResponse")
+        
+        // Act
+        NetworkManager.GETMethodRequest(foodName: "") { result in
+            
+            if let safeData = result
+            {
+                let jsonObj = Parser.parseBeerList(apiResponse: safeData)
+                
+                self.viewModelObj.insertBeerData(jsonObj, foodName: "") {
+                    self.viewModelObj.fetchBeerData("") { value in
+                        //Assert
+                        XCTAssertNotEqual(0, value.count)
+                    }
+                }
+                
+                //Assert
+                XCTAssertNotNil(result)
+                expectation.fulfill()
+            }
+            
+        } Failure: { error in
+            XCTAssertNil(error)
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 30, handler: nil)
 
+    }
 }
