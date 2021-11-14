@@ -13,6 +13,7 @@
   * Webkit
   * Realm
   * Reachability
+  * ObjectMapper
   * Cocoa Touch class
   * XCTest
   
