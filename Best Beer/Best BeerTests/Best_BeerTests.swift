@@ -57,7 +57,7 @@ class Best_BeerTests: XCTestCase {
             XCTAssertNil(error)
             expectation.fulfill()
         }
-        waitForExpectations(timeout: 30, handler: nil)
+        waitForExpectations(timeout: 60, handler: nil)
     }
     
     func test_Networkmanager_With_InvalidRequest_Returns_BeerDataResponse()
@@ -88,7 +88,7 @@ class Best_BeerTests: XCTestCase {
             XCTAssertNil(error)
             expectation.fulfill()
         }
-        waitForExpectations(timeout: 30, handler: nil)
+        waitForExpectations(timeout: 60, handler: nil)
 
     }
 }
