@@ -30,6 +30,7 @@
 		587918C0274017F800AB0E0D /* BeerListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587918BF274017F800AB0E0D /* BeerListModel.swift */; };
 		587918C22740184900AB0E0D /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587918C12740184900AB0E0D /* Parser.swift */; };
 		587918C627402CF900AB0E0D /* Appicon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 587918C527402CF900AB0E0D /* Appicon.xcassets */; };
+		587918C827409F8C00AB0E0D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 587918C727409F8B00AB0E0D /* README.md */; };
 		63473EE75C75A8029528A76D /* Pods_Best_Beer_Best_BeerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BCFFFAF4AE97929E38A0083 /* Pods_Best_Beer_Best_BeerUITests.framework */; };
 		D01B54088FE45B14FFD722FE /* Pods_Best_BeerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6D90ECDEE3713028F72E73 /* Pods_Best_BeerTests.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		587918BF274017F800AB0E0D /* BeerListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListModel.swift; sourceTree = "<group>"; };
 		587918C12740184900AB0E0D /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		587918C527402CF900AB0E0D /* Appicon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Appicon.xcassets; sourceTree = "<group>"; };
+		587918C727409F8B00AB0E0D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		73B26B1DB62C24A42FF65353 /* Pods-Best BeerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Best BeerTests.debug.xcconfig"; path = "Target Support Files/Pods-Best BeerTests/Pods-Best BeerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D71D2A1DEAAFC92006F52929 /* Pods-Best Beer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Best Beer.debug.xcconfig"; path = "Target Support Files/Pods-Best Beer/Pods-Best Beer.debug.xcconfig"; sourceTree = "<group>"; };
 		DFBE3C73E365C7F982DC2960 /* Pods-Best BeerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Best BeerTests.release.xcconfig"; path = "Target Support Files/Pods-Best BeerTests/Pods-Best BeerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		58791860273F577800AB0E0D = {
 			isa = PBXGroup;
 			children = (
+				587918C727409F8B00AB0E0D /* README.md */,
 				5879186B273F577800AB0E0D /* Best Beer */,
 				58791882273F577B00AB0E0D /* Best BeerTests */,
 				5879188C273F577B00AB0E0D /* Best BeerUITests */,
@@ -371,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				587918C827409F8C00AB0E0D /* README.md in Resources */,
 				58791879273F577A00AB0E0D /* LaunchScreen.storyboard in Resources */,
 				58791876273F577A00AB0E0D /* Assets.xcassets in Resources */,
 				58791874273F577800AB0E0D /* Main.storyboard in Resources */,

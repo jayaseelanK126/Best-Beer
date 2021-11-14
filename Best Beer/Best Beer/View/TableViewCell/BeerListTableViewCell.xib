@@ -40,7 +40,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1uh-2c-nSz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notfoundImg" translatesAutoresizingMaskIntoConstraints="NO" id="1uh-2c-nSz">
                                 <rect key="frame" x="198" y="-14" width="90" height="104"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="104" id="CSr-uX-86c"/>
@@ -55,7 +55,7 @@
                             <constraint firstItem="1uh-2c-nSz" firstAttribute="top" secondItem="qeh-0m-XGn" secondAttribute="top" constant="-14" id="8hQ-5F-r4z"/>
                             <constraint firstAttribute="trailing" secondItem="1uh-2c-nSz" secondAttribute="trailing" constant="8" id="F2A-0r-RfU"/>
                             <constraint firstItem="aVd-Zb-hIa" firstAttribute="top" secondItem="qeh-0m-XGn" secondAttribute="top" constant="5" id="Jq3-dr-6RY"/>
-                            <constraint firstItem="t1N-sd-fpG" firstAttribute="firstBaseline" relation="lessThanOrEqual" secondItem="1uh-2c-nSz" secondAttribute="baseline" constant="24.5" symbolType="layoutAnchor" id="KjR-9A-thO"/>
+                            <constraint firstItem="t1N-sd-fpG" firstAttribute="firstBaseline" relation="lessThanOrEqual" secondItem="1uh-2c-nSz" secondAttribute="baseline" constant="19" symbolType="layoutAnchor" id="KjR-9A-thO"/>
                             <constraint firstItem="tQJ-nz-Wcm" firstAttribute="leading" secondItem="aVd-Zb-hIa" secondAttribute="leading" id="RZf-Pw-5PK"/>
                             <constraint firstItem="aVd-Zb-hIa" firstAttribute="leading" secondItem="qeh-0m-XGn" secondAttribute="leading" constant="8" id="VPU-Zc-TVF"/>
                             <constraint firstAttribute="bottom" secondItem="1uh-2c-nSz" secondAttribute="bottom" constant="13" id="bzC-Ye-KM7"/>
@@ -85,4 +85,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="91.40625"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="notfoundImg" width="48" height="48"/>
+    </resources>
 </document>

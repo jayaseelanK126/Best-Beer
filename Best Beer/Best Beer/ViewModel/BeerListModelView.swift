@@ -10,6 +10,7 @@ import RealmSwift
 
 struct BeerListModelView
 {
+    //MARK: - Get beer list based on food name local database /API
     func getBeerSuggestionList(_ foodName:String, beerResult: @escaping([BeerListModel]) -> Void )
     {
         let realm = try! Realm()
@@ -19,16 +20,18 @@ struct BeerListModelView
         
         if !data.isEmpty
         {
+            //fetch beer list from local database if food name already searched
             fetchBeerData(foodName.trimmingCharacters(in: .whitespaces).lowercased()) { result in
                 beerResult(result)
             }
         }
         else
         {
+            //fetch beerlist from API
             fetchBeerList(foodName, fetchResult: { result in
                 
                 let queue = OperationQueue()
-                queue.maxConcurrentOperationCount = 3
+                queue.maxConcurrentOperationCount = 2
                 
                 let op1 = BlockOperation(block: {
                     print("implementing op1")
@@ -42,7 +45,7 @@ struct BeerListModelView
                     insertBeerData(result,foodName: foodName.trimmingCharacters(in: .whitespaces).lowercased(), success: {
                         fetchBeerData(foodName.trimmingCharacters(in: .whitespaces).lowercased()) { result in
                             
-                            // beerResult(result)
+                             beerResult(result)
                             
                         }
                     })
@@ -56,6 +59,7 @@ struct BeerListModelView
         
     }
     
+    //MARK: - Fetch beer list from API
     func fetchBeerList(_ foodName:String, fetchResult: @escaping([BeerListModel]) -> Void)
     {
         
@@ -104,7 +108,7 @@ struct BeerListModelView
                     beerObj.tagline = result.tagline ?? ""
                     beerObj.image_url = result.image_url ?? ""
                     beerObj.abv = result.abv?.description ?? "0.0"
-                    beerObj.beerImgData = GenericMethod.loadURLToData(urlStr: result.image_url ?? "https://i.postimg.cc/HxR2Vf6T/no-alcohol-sign-warning-isolated-260nw-323033006.png")
+                    beerObj.beerImgData = GenericMethod.loadURLToData(urlStr: result.image_url ?? "https://img.icons8.com/color/100/000000/beer-bottle.png")
                     beerObj.foodName = foodName.trimmingCharacters(in: .whitespaces).lowercased()
                     realm.add(beerObj)
                 }

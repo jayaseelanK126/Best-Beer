@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var beerListTblView: UITableView!
     
     var beerListModelViewObj = BeerListModelView()
-    
+    var isFirstTime:Bool = false
     var beerListArr: [BeerListModel] = []
     
     private var selectedRow:Int?
@@ -32,29 +32,34 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setDesignStyle()
-        setUpMethod()
+        setUp()
     }
     
+    //MARK: - Set design style
     func setDesignStyle()
     {
         DispatchQueue.main.async {
             CSS.customCardView(self.outerView)
+            self.headerTitleLbl.textColor = .black
             self.beerListContainerView.roundCorners(corners: [.topLeft, .topRight], radius: 25.0)
+            self.searchBar.searchTextField.textColor = .black
+
         }
     }
     
-    func setUpMethod()
+    //MARK: - initial setup method
+    func setUp()
     {
         fetchData("")
+        isFirstTime = true
         beerListTblView.register(UINib(nibName: "BeerListTableViewCell", bundle: nil), forCellReuseIdentifier: "BeerListCell")
         searchBar.delegate = self
         sortyByBtn.tag = 0
-        self.sortByBtnAction(self)
     }
     
+    //MARK: - Fetch beer list and show it in List
     func fetchData(_ foodName:String)
     {
-        
         beerListModelViewObj.getBeerSuggestionList(foodName) { [weak self] result in
             self?.hideActivityIndicator()
             self?.beerListArr = []
@@ -82,7 +87,7 @@ class ViewController: UIViewController {
             }
         }
     }
-    
+    //MARK: - Sorty based on abv
     @IBAction func sortByBtnAction(_ sender: Any)
     {
         if sortyByBtn.tag == 0
@@ -123,12 +128,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate
         {
             cell.beerImgView.image = UIImage(data: safedata)
         }
-        else
-        {
-            cell.beerImgView.image = UIImage(named: "notfoundImg")
-        }
-        
-        
+
         return cell
         
     }
@@ -141,19 +141,15 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate
 }
 extension ViewController: UISearchBarDelegate
 {
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
-    {
-        searchBar.text = nil
-        searchBar.resignFirstResponder()
-    }
-    
+ //MARK: - search delegate
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
     {
         showActivityIndicator()
         
         searchBar.resignFirstResponder()
-        
-        fetchData(searchBar.text ?? "")
+        if let safeData = searchBar.text
+        {
+            fetchData(safeData)
+        }
     }
 }

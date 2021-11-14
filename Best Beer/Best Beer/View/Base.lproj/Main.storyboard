@@ -50,9 +50,9 @@
                                             <constraint firstItem="e4G-5e-u7B" firstAttribute="centerY" secondItem="wqc-SG-WQn" secondAttribute="centerY" id="zwp-g3-xKJ"/>
                                         </constraints>
                                     </view>
-                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="What you wish to drink?" translatesAutoresizingMaskIntoConstraints="NO" id="cen-8S-zMX">
-                                        <rect key="frame" x="5" y="117" width="404" height="51"/>
-                                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Enter your food name" translatesAutoresizingMaskIntoConstraints="NO" id="cen-8S-zMX">
+                                        <rect key="frame" x="5" y="116.5" width="404" height="51"/>
+                                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                     </searchBar>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tK5-ss-xCj">

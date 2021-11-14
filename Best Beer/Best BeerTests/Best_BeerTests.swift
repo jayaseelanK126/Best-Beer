@@ -27,7 +27,7 @@ class Best_BeerTests: XCTestCase {
     func test_Networkmanager_With_ValidRequest_Returns_BeerDataResponse()
     {
         //Arrange
-        let expectation = self.expectation(description: "ValidRequest_Returns_NewsDataResponse")
+        let expectation = self.expectation(description: "ValidRequest_Returns_BeerDataResponse")
         
         // Act
         NetworkManager.GETMethodRequest(foodName: "tacos") { result in
@@ -63,7 +63,7 @@ class Best_BeerTests: XCTestCase {
     func test_Networkmanager_With_InvalidRequest_Returns_BeerDataResponse()
     {
         //Arrange
-        let expectation = self.expectation(description: "InvalidRequest_Returns_NewsDataResponse")
+        let expectation = self.expectation(description: "InvalidRequest_Returns_BeerDataResponse")
         
         // Act
         NetworkManager.GETMethodRequest(foodName: "") { result in
