@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,23 +13,23 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Best_Beer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7j-ag-rFm">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Td-Q9-7jr">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="101.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="101.66666666666667"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Beer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqc-SG-WQn">
-                                                <rect key="frame" x="10" y="59" width="140.5" height="34.5"/>
+                                                <rect key="frame" x="10" y="59" width="314" height="34.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4G-5e-u7B">
-                                                <rect key="frame" x="368" y="58.5" width="36" height="36"/>
+                                                <rect key="frame" x="329" y="58.333333333333343" width="36" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="Uvz-EP-lFg"/>
                                                     <constraint firstAttribute="width" secondItem="e4G-5e-u7B" secondAttribute="height" id="roQ-jW-RJ4"/>
@@ -45,21 +45,22 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="wqc-SG-WQn" secondAttribute="bottom" constant="8" id="Wmu-qs-eqH"/>
+                                            <constraint firstItem="e4G-5e-u7B" firstAttribute="leading" secondItem="wqc-SG-WQn" secondAttribute="trailing" constant="5" id="d5a-qX-wNe"/>
                                             <constraint firstAttribute="trailing" secondItem="e4G-5e-u7B" secondAttribute="trailing" constant="10" id="rUf-xK-xmf"/>
                                             <constraint firstItem="wqc-SG-WQn" firstAttribute="leading" secondItem="3Td-Q9-7jr" secondAttribute="leading" constant="10" id="xaq-BH-oYz"/>
                                             <constraint firstItem="e4G-5e-u7B" firstAttribute="centerY" secondItem="wqc-SG-WQn" secondAttribute="centerY" id="zwp-g3-xKJ"/>
                                         </constraints>
                                     </view>
                                     <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Enter your food name" translatesAutoresizingMaskIntoConstraints="NO" id="cen-8S-zMX">
-                                        <rect key="frame" x="5" y="116.5" width="404" height="51"/>
+                                        <rect key="frame" x="5" y="116.66666666666669" width="365" height="51"/>
                                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                     </searchBar>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tK5-ss-xCj">
-                                        <rect key="frame" x="0.0" y="182.5" width="414" height="713.5"/>
+                                        <rect key="frame" x="0.0" y="182.66666666666669" width="375" height="629.33333333333326"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4g2-bV-HDg">
-                                                <rect key="frame" x="5" y="30" width="404" height="683.5"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4g2-bV-HDg">
+                                                <rect key="frame" x="5" y="30" width="365" height="599.33333333333337"/>
                                                 <color key="backgroundColor" red="0.090196078430000007" green="0.098039215690000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="agF-G3-Kty"/>
