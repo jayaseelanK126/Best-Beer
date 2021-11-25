@@ -31,19 +31,6 @@ extension UIImageView
     }
 }
 
-extension NSAttributedString
-{
-    internal convenience init?(html: String) {
-        guard let data = html.data(using: String.Encoding.utf16, allowLossyConversion: false) else {
-            // not sure which is more reliable: String.Encoding.utf16 or String.Encoding.unicode
-            return nil
-        }
-        guard let attributedString = try? NSMutableAttributedString(data: data, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) else {
-            return nil
-        }
-        self.init(attributedString: attributedString)
-    }
-}
 
 //MARK: - UIApplication
 extension UIApplication
@@ -65,26 +52,7 @@ extension Notification.Name {
     static let didNoDataReceived = Notification.Name("didNoDataReceived")
 }
 
-extension StringProtocol {
-    var html2AttributedString: NSAttributedString? {
-        Data(utf8).html2AttributedString
-    }
-    var html2String: String {
-        html2AttributedString?.string ?? ""
-    }
-}
 
-extension Data {
-    var html2AttributedString: NSAttributedString? {
-        do {
-            return try NSAttributedString(data: self, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
-        } catch {
-            print("error:", error)
-            return  nil
-        }
-    }
-    var html2String: String { html2AttributedString?.string ?? "" }
-}
 extension UIView {
    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
